@@ -5,8 +5,8 @@
  * ID: @FreezeMan
  * Date: 7/29/16
  * Time: 7:05 PM
- * Website:
- * Email:
+ * Website: NextPay.ir
+ * Email: freezeman.0098@gmail.com
  * @copyright 2016
  */
 
@@ -15,8 +15,7 @@ function nextpay_config() {
      "FriendlyName" => array("Type" => "System", "Value"=>"درگاه پرداخت - nextpay"),
      "api_key" => array("FriendlyName" => "api_key", "Type" => "text", "Size" => "70", ),
      "Currencies" => array("FriendlyName" => "Currencies", "Type" => "dropdown", "Options" => "Rial,Toman", ),
-	 "afp" => array("FriendlyName" => "افزودن کارمزد به قیمت ها", "Type" => "yesno", "Description" => "در صورت انتخاب 1 درصد به هزینه پرداخت شده افزوده می شود.", ),
-     );
+	  );
 	return $configarray;
 }
 
@@ -25,7 +24,6 @@ function nextpay_link($params) {
 	# Gateway Specific Variables
 	$api_key = $params['api_key'];
     $currencies = $params['Currencies'];
-    $afp = $params['afp'];
     
 	# Invoice Variables
 	$invoiceid = $params['invoiceid'];
@@ -57,7 +55,6 @@ function nextpay_link($params) {
         <input type="hidden" name="invoiceid" value="'. $invoiceid .'" />
         <input type="hidden" name="amount" value="'. $amount .'" />
         <input type="hidden" name="currencies" value="'. $currencies .'" />
-        <input type="hidden" name="afp" value="'. $afp .'" />
         <input type="hidden" name="systemurl" value="'. $systemurl .'" />
         <input type="submit" name="pay" value=" پرداخت " />
     </form>

@@ -5,8 +5,8 @@
  * ID: @FreezeMan
  * Date: 7/29/16
  * Time: 7:05 PM
- * Website:
- * Email:
+ * Website: NextPay.ir
+ * Email: freezeman.0098@gmail.com
  * @copyright 2016
  */
 
@@ -33,14 +33,6 @@
 	$invoiceid  = checkCbInvoiceID($invoiceid, $GATEWAY['name']); # Checks invoice ID is a valid invoice number or ends processing
 
 	$CaculatedFee = round($Amount*0.01);
-	
-	if($GATEWAY['afp'] == 'on'){
-		$PaidFee 	= 0;
-		$HiddenFee  = $CaculatedFee;
-	} else {
-		$PaidFee 	= $CaculatedFee;
-		$HiddenFee  = 0;
-	}
 
 	$result = -77;
 	$resultO = new stdClass();

@@ -1,16 +1,16 @@
 <?php
-    /**
-    * Created by NextPay.ir
-    * author: FreezeMan
-    * ID: @FreezeMan
-    * Date: 7/29/16
-    * Time: 7:05 PM
-    * Website:
-    * Email:
-    * @copyright 2016
-    */
+/**
+ * Created by NextPay.ir
+ * author: FreezeMan
+ * ID: @FreezeMan
+ * Date: 7/29/16
+ * Time: 4:25 PM
+ * Website: NextPay.ir
+ * Email: freezeman.0098@gmail.com
+ * @copyright 2016
+ */
 
-    include_once "./nextpay_payment.php";
+    include_once "nextpay_payment.php";
 
     //'29356111-73f9-45b2-8f7f-7c781f3858d6' -> sample api_key
     if(isset($_POST['api_key']))
@@ -38,6 +38,11 @@
     );
 
     $nextpay = new Nextpay_Payment($params_nextpay);
-    $trans_id = $nextpay->verify();
-    $nextpay->send($trans_id);
+    $result = $nextpay->token();
+    if(intval($result->code) == -1)
+        $nextpay->send($result->trans_id);
+    else {
+        echo "<h2>تراکنش ناموفق بود</h2>";
+        echo "<h3>کد خطا : ".$result->code."</h3>";
+    }
 

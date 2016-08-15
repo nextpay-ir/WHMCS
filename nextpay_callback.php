@@ -4,14 +4,14 @@
  * author: FreezeMan
  * ID: @FreezeMan
  * Date: 7/29/16
- * Time: 6:14 PM
- * Website:
- * Email:
+ * Time: 6:39 PM
+ * Website: NextPay.ir
+ * Email: freezeman.0098@gmail.com
  * @copyright 2016
  */
 
 //---- params
-include_once "./nextpay_payment.php";
+include_once "nextpay_payment.php";
 $nextpay = new Nextpay_Payment();
 $params = array_merge($_GET,$_POST);
 
