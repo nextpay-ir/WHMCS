@@ -1,13 +1,15 @@
 <?php
 /**
  * Created by NextPay.ir
- * author: FreezeMan
- * ID: @FreezeMan
- * Date: 7/29/16
- * Time: 7:05 PM
+ * author: Nextpay Company
+ * ID: @nextpay
+ * Date: 09/22/2016
+ * Time: 5:05 PM
  * Website: NextPay.ir
- * Email: freezeman.0098@gmail.com
+ * Email: info@nextpay.ir
  * @copyright 2016
+ * @package NextPay_Gateway
+ * @version 1.0
  */
 
 function nextpay_config() {

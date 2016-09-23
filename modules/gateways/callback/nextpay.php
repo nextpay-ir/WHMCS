@@ -1,13 +1,15 @@
 <?php
 /**
  * Created by NextPay.ir
- * author: FreezeMan
- * ID: @FreezeMan
- * Date: 7/29/16
- * Time: 7:05 PM
+ * author: Nextpay Company
+ * ID: @nextpay
+ * Date: 09/22/2016
+ * Time: 5:05 PM
  * Website: NextPay.ir
- * Email: freezeman.0098@gmail.com
+ * Email: info@nextpay.ir
  * @copyright 2016
+ * @package NextPay_Gateway
+ * @version 1.0
  */
 
 	# Required File Includes
@@ -30,6 +32,7 @@
 	$invoiceid  = $_GET['invoiceid'];
 	$Amount 	= $_GET['Amount'];
 	$trans_id	= (isset($_POST['trans_id'])) ? $_POST['trans_id'] : $_GET['trans_id'];
+	$order_id	= (isset($_POST['order_id']) && $invoiceid == $_POST['order_id']) ? $_POST['order_id'] : $invoiceid;
 	$invoiceid  = checkCbInvoiceID($invoiceid, $GATEWAY['name']); # Checks invoice ID is a valid invoice number or ends processing
 
 	$CaculatedFee = round($Amount*0.01);
@@ -45,6 +48,7 @@
 			$nextpay = new Nextpay_Payment();
 			$nextpay->setAmount($Amount);
 			$nextpay->setApiKey($api_key);
+			$nextpay->setOrderId($order_id);
 			$nextpay->setTransId($trans_id);
 			$result = intval($nextpay->verify_request());
 			$resultO = $nextpay->getParams();

@@ -1,13 +1,15 @@
 <?php
 /**
  * Created by NextPay.ir
- * author: FreezeMan
- * ID: @FreezeMan
- * Date: 7/29/16
- * Time: 4:25 PM
+ * author: Nextpay Company
+ * ID: @nextpay
+ * Date: 09/22/2016
+ * Time: 5:05 PM
  * Website: NextPay.ir
- * Email: freezeman.0098@gmail.com
+ * Email: info@nextpay.ir
  * @copyright 2016
+ * @package NextPay_Gateway
+ * @version 1.0
  */
 
     include_once "nextpay_payment.php";
@@ -28,11 +30,13 @@
     else
         $Fee = 0;
 
+    $order_id = $_POST['invoiceid'];
 
-    $CallbackURL = $_POST['systemurl'] .'/modules/gateways/callback/nextpay.php?invoiceid='. $_POST['invoiceid'] .'&Amount='. $Amount;
+    $CallbackURL = $_POST['systemurl'] .'/modules/gateways/callback/nextpay.php?invoiceid='. $order_id .'&Amount='. $Amount;
 
     $params_nextpay = array(
         "api_key"=>$api_key,
+        "order_id"=>$order_id,
         "amount"=>$Amount,
         "callback_uri"=>$CallbackURL
     );
