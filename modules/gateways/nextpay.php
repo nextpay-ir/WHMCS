@@ -15,8 +15,8 @@
 function nextpay_config() {
     $configarray = array(
      "FriendlyName" => array("Type" => "System", "Value"=>"درگاه پرداخت - nextpay"),
-     "api_key" => array("FriendlyName" => "api_key", "Type" => "text", "Size" => "70", ),
-     "Currencies" => array("FriendlyName" => "Currencies", "Type" => "dropdown", "Options" => "Rial,Toman", ),
+     "api_key" => array("FriendlyName" => "api_key", "Type" => "text", "Size" => "70" ),
+     "Currencies" => array("FriendlyName" => "Currencies", "Type" => "dropdown", "Options" => "Rial,Toman" )
 	  );
 	return $configarray;
 }
