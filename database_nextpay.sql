@@ -1,4 +1,4 @@
-﻿CREATE TABLE IF NOT EXISTS `tblpaymentgateways` (
+CREATE TABLE IF NOT EXISTS `tblpaymentgateways` (
   `gateway` text NOT NULL,
   `setting` text NOT NULL,
   `value` text NOT NULL,
